@@ -35,7 +35,9 @@ module.exports.routes = {
   '/': {  view: 'homepage' },
   'post /authentication' :{controller:'AuthController',action:'userAuthentication'},
   'post /registration':  {controller:'AuthController',action:'userRegistration'},
-   '/logout' : { controller:'AuthController', action:'userSessionDestroy'}
+   '/logout' : { controller:'AuthController', action:'userSessionDestroy'},
+  'get /jobslist' : { controller:'JobController', action:'getAllJobs'},
+   'get /top-jobs' : { controller:'JobController', action:'getAllTopJobs'}
 
   /***************************************************************************
   *                                                                          *

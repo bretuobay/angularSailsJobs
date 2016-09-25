@@ -3,26 +3,9 @@
 <div class="container">
   <h2></h2>
   <ul class="list-group">
-    <li class="list-group-item"><span class="badge">10 people have applied</span>
 
-      <a href="#job/94838" > Full stack PHP / Laravel Developer</a>
-
-    </li>
-
-    <li class="list-group-item"><span class="badge">5 people have applied</span>
-
-      <a href="#job/94838" > Full stack Node.js/Sails.js Developer</a>
-
-    </li>
-
-    <li class="list-group-item"><span class="badge">3 people have applied</span>
-       <a href="#job/94838" > Full stack Python/Django Developer</a>
-    </li>
-
-    <li class="list-group-item"><span class="badge">30 people have applied</span>
-
-      <a href="#job/94838" > Full stack Ruby on Rails Developer</a>
-
+    <li class="list-group-item" ng-repeat="job in topjobs" ><span class="badge">{{job.num_applicants}} people have applied</span>
+      <a href="#job/{{job.id}}" >   {{job.job_title}} </a>
     </li>
 
   </ul>

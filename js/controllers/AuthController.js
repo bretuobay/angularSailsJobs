@@ -1,7 +1,7 @@
 app.controller('AuthController', function($scope,$http,$location) {
-
+$scope.register = {}
 $scope.page_title = '';
-$scope.username= "Demo User";
+$scope.register.username= "Demo User";
 
  $scope.registrationData = {};
 
@@ -9,16 +9,17 @@ $scope.username= "Demo User";
 
   $scope.registerUser = function() {
     $scope.registrationData = {
-      username :  $scope.username,
-      email :  $scope.email ,
-      password :  $scope.password,
-      confirm_password :  $scope.confirm_password
+      "username" :  $scope.register.username,
+      "email" :  $scope.register.email ,
+      "password" :  $scope.register.password,
+      "confirm_password" :  $scope.register.confirm_password
     };
+    console.log($scope.registrationData)
 
   $http({
   method  : 'POST',
   url     :  $scope.BASEURL+'/registration',
-  data    : $scope.registratioData,  // pass in data as strings
+  data    : $scope.registrationData,  // pass in data as strings
   headers : { 'Content-Type': 'application/json' }
  })
   .success(function(data) {
@@ -33,7 +34,7 @@ $scope.username= "Demo User";
     }
   });
 
-};
+};//end of registration
 
 
 $scope.loginUser = function() {
@@ -59,7 +60,7 @@ $scope.loginUser = function() {
       }
     });
 
-};
+};// end of login
 
 $scope.logoutUser = function(){
   // pay a visit to server to destroy session
@@ -75,7 +76,7 @@ $scope.logoutUser = function(){
   });
 
 
-};
+};// end of logout
 
 
 });

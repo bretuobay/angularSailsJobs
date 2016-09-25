@@ -91,8 +91,11 @@ module.exports = {
 		var user_data = {
       email: req.param('email'),
       password: req.param('password'),
-      confirm_password : req.param('confirm_password')
+      confirm_password : req.param('confirm_password'),
+			username :req.param('username')
     };
+
+		console.log(user_data);
 
 		Auth.create(user_data, function userCreated(err, user) {
 
@@ -109,7 +112,7 @@ module.exports = {
 			}else{
 
 				res.json({
-				 success: false,
+				 success: true,
 				 message : 'Registration was successful, you can log in to AwesomeJobs',
 				 data : user
 			 });
