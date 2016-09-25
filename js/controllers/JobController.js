@@ -1,7 +1,7 @@
 app.controller('JobController', function($scope,$http,$routeParams) {
 
 $scope.page_title = '';
-$scope.BASEURL = "http://localhost:8081";
+$scope.BASEURL = "http://localhost:8081"; // set deployment base url for the sails server
 
 $scope.getAllTopJobs = function(){
 

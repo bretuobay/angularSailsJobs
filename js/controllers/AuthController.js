@@ -5,7 +5,7 @@ $scope.register.username= "Demo User";
 
  $scope.registrationData = {};
 
- $scope.BASEURL = "http://localhost:8081"
+ $scope.BASEURL = "http://localhost:8081";// set deployment base url for the sails server
 
   $scope.registerUser = function() {
     $scope.registrationData = {
