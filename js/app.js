@@ -37,7 +37,7 @@ app.config(function($routeProvider) {
     .when("/top-jobs", {
          templateUrl : "partials/_top_jobs.html",
           controller : "JobController"
-    }).when("/job/94838",{
+    }).when("/job/:job_id",{
        templateUrl : "partials/_job.html",
        controller : "JobController"
     });

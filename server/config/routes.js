@@ -37,7 +37,9 @@ module.exports.routes = {
   'post /registration':  {controller:'AuthController',action:'userRegistration'},
    '/logout' : { controller:'AuthController', action:'userSessionDestroy'},
   'get /jobslist' : { controller:'JobController', action:'getAllJobs'},
-   'get /top-jobs' : { controller:'JobController', action:'getAllTopJobs'}
+   'get /top-jobs' : { controller:'JobController', action:'getAllTopJobs'},
+   'post /single-job' : { controller:'JobController', action:'getSingleJobWithId'},
+   'post /search' : { controller:'JobController', action:'getJobsByQuery'}
 
   /***************************************************************************
   *                                                                          *

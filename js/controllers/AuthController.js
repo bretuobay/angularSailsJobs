@@ -72,7 +72,7 @@ $scope.logoutUser = function(){
   headers : { 'Content-Type': 'application/json' }
   })
   .success(function(data) {
-      $location.path("/");
+      $location.path("/");// visit home no matter what
   });
 
 

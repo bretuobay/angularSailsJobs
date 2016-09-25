@@ -1,15 +1,24 @@
-
-    <a href="#/jobs-portal">Back to Dashboard &#8658;	</a>
+<a href="#/jobs-portal">Back to Dashboard &#8658;	</a>
 <div class="row">
-
   <div class="col-lg-8-offset-2">
       <form role="form">
         <div class="form-group">
           <label for="search">Search</label>
-          <input type="text" class="form-control" id="search">
+          <input type="text" ng-model="jobquery" class="form-control" id="search">
         </div>
-          <button type="submit" class="btn btn-default pull-right">Search</button>
+          <button type="submit"   ng-click="getJobsByQuery()"  class="btn btn-default pull-right">Search</button>
       </form>
-        </div><! --/col-lg-8 -->
+    </div><! --/col-lg-8 -->
+ </div>
 
-</div>
+  <div class="row">
+   Jobs Found
+  <div class="col-lg-8-offset-2">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="job in jobslist" >
+        <a href="#job/{{job.id}}" >   {{job.job_title}} </a>
+      </li>
+
+    </ul>
+    </div>
+  </div>

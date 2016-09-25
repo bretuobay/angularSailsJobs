@@ -61,7 +61,47 @@ getAllTopJobs : function(req,res,next){
   return res.json(topjobs);
 
 });
+},
+
+getSingleJobWithId : function(req,res,next){
+  Job.findOne({
+  id:req.param('id')
+	}).exec(function (err, job){
+
+  if (err) {
+     return next(err);
+  }
+
+  return res.json(job);
+
+});
+},
+
+getJobsByQuery : function(req,res,next){
+
+	var query = req.param('jobquery');
+
+	Job.find({
+  job_title : {
+    'contains' : query
+  }
+}).exec(function (err, jobs){
+
+  if (err) {
+     return next(err);
+  }
+
+  return res.json({
+		data : jobs,
+		success: true
+	});
+
+ });
+
+
 }
+
+
 
 
 };
